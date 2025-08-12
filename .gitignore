@@ -1,0 +1,5 @@
+target
+.idea
+c-app/build
+Cargo.lock
+

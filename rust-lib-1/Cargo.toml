@@ -1,0 +1,8 @@
+[package]
+name = "rust-lib-1"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "rust_lib_1"
+crate-type = ["staticlib"]
