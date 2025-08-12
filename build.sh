@@ -2,6 +2,11 @@
 
 set -e
 
+if [ "$#" -ne 1 ]; then
+  echo "Usage: ./build.sh <release target>"
+  exit 1
+fi
+
 pushd rust-lib-1
 cargo clean
 cargo build --profile release
@@ -14,12 +19,9 @@ cargo build --profile release
 cargo build --profile release-lto
 popd
 
-RELEASE_TARGET="release-lto"
-#RELEASE_TARGET="release"
-
 pushd c-app
 rm -rf build
-cmake . -Bbuild -DRELEASE_TARGET="${RELEASE_TARGET}"
+cmake . -Bbuild -DRELEASE_TARGET="$1"
 cmake --build build -j $(sysctl -n hw.ncpu)
 ./build/hello_world
 popd
