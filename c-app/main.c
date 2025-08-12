@@ -4,7 +4,7 @@
 #include "rust.h"
 
 int main() {
-    print_from_lib_1((uint8_t*) "Hello, world!!!!\n", 17);
-    print_from_lib_2((uint8_t*) "Hello again, world!\n", 20);
+    print_from_lib_1((uint8_t*) "Hello from lib 1!\n", 18);
+    print_from_lib_2((uint8_t*) "Hello from lib 2!\n", 18);
     return 0;
 }

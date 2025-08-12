@@ -6,14 +6,14 @@
 ~/w/multiple-rust-lib-test/rust-lib-1 ~/w/multiple-rust-lib-test
      Removed 20 files, 40.8MiB total
    Compiling rust-lib-1 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1)
-    Finished `release` profile [optimized] target(s) in 0.11s
+    Finished `release` profile [optimized] target(s) in 0.12s
    Compiling rust-lib-1 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1)
     Finished `release-lto` profile [optimized] target(s) in 1.28s
 ~/w/multiple-rust-lib-test
 ~/w/multiple-rust-lib-test/rust-lib-2 ~/w/multiple-rust-lib-test
      Removed 20 files, 40.8MiB total
    Compiling rust-lib-2 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2)
-    Finished `release` profile [optimized] target(s) in 0.10s
+    Finished `release` profile [optimized] target(s) in 0.11s
    Compiling rust-lib-2 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2)
     Finished `release-lto` profile [optimized] target(s) in 1.28s
 ~/w/multiple-rust-lib-test
@@ -38,11 +38,11 @@
 [ 50%] Building C object CMakeFiles/hello_world.dir/main.c.o
 [100%] Linking C executable hello_world
 duplicate symbol 'std::panicking::EMPTY_PANIC::h2876679403c3e8d4' in:
-    /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1/target/release-lto/librust_lib_1.a[2](rust_lib_1-3caace4476186657.rust_lib_1.44fdf01974a1bf1d-cgu.0.rcgu.o)
     /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2/target/release-lto/librust_lib_2.a[2](rust_lib_2-43121a60472c2541.rust_lib_2.2bc5365de1960803-cgu.0.rcgu.o)
+    /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1/target/release-lto/librust_lib_1.a[2](rust_lib_1-3caace4476186657.rust_lib_1.44fdf01974a1bf1d-cgu.0.rcgu.o)
 duplicate symbol '_rust_eh_personality' in:
-    /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1/target/release-lto/librust_lib_1.a[2](rust_lib_1-3caace4476186657.rust_lib_1.44fdf01974a1bf1d-cgu.0.rcgu.o)
     /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2/target/release-lto/librust_lib_2.a[2](rust_lib_2-43121a60472c2541.rust_lib_2.2bc5365de1960803-cgu.0.rcgu.o)
+    /Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1/target/release-lto/librust_lib_1.a[2](rust_lib_1-3caace4476186657.rust_lib_1.44fdf01974a1bf1d-cgu.0.rcgu.o)
 ld: 2 duplicate symbols
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 make[2]: *** [hello_world] Error 1
@@ -54,18 +54,18 @@ make: *** [all] Error 2
 ```
 ❯ ./build.sh release
 ~/w/multiple-rust-lib-test/rust-lib-1 ~/w/multiple-rust-lib-test
-     Removed 20 files, 40.8MiB total
+     Removed 41 files, 41.0MiB total
    Compiling rust-lib-1 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1)
     Finished `release` profile [optimized] target(s) in 0.11s
    Compiling rust-lib-1 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-1)
-    Finished `release-lto` profile [optimized] target(s) in 1.28s
+    Finished `release-lto` profile [optimized] target(s) in 1.31s
 ~/w/multiple-rust-lib-test
 ~/w/multiple-rust-lib-test/rust-lib-2 ~/w/multiple-rust-lib-test
-     Removed 20 files, 40.8MiB total
+     Removed 41 files, 41.0MiB total
    Compiling rust-lib-2 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2)
     Finished `release` profile [optimized] target(s) in 0.10s
    Compiling rust-lib-2 v0.1.0 (/Users/vclarksa/w/multiple-rust-lib-test/rust-lib-2)
-    Finished `release-lto` profile [optimized] target(s) in 1.31s
+    Finished `release-lto` profile [optimized] target(s) in 1.32s
 ~/w/multiple-rust-lib-test
 ~/w/multiple-rust-lib-test/c-app ~/w/multiple-rust-lib-test
 -- The C compiler identification is AppleClang 17.0.0.17000013
@@ -88,8 +88,7 @@ make: *** [all] Error 2
 [ 50%] Building C object CMakeFiles/hello_world.dir/main.c.o
 [100%] Linking C executable hello_world
 [100%] Built target hello_world
-Hello, world!!!!
-Hello again, world!
+Hello from lib 1!
+Hello from lib 2!
 ~/w/multiple-rust-lib-test
-
 ```
