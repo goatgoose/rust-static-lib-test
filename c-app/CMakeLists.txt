@@ -24,3 +24,4 @@ add_executable(hello_world main.c rust.h)
 
 target_link_libraries(hello_world PUBLIC "${RUST_LIB_1_NAME}")
 target_link_libraries(hello_world PUBLIC "${RUST_LIB_2_NAME}")
+target_link_libraries(hello_world PUBLIC pthread dl)

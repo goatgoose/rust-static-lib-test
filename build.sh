@@ -21,8 +21,8 @@ popd
 
 pushd c-app
 rm -rf build
-cmake . -Bbuild -DRELEASE_TARGET="$1"
-cmake --build build -j $(sysctl -n hw.ncpu)
+cmake3 . -Bbuild -DRELEASE_TARGET="$1"
+cmake3 --build build -j $(sysctl -n hw.ncpu)
 ./build/hello_world
 popd
 
